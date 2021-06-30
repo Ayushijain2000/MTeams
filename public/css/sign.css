@@ -1,0 +1,139 @@
+.logo_img{
+  padding: 1rem;
+}
+
+.title_head{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(5, 5, 75);
+}
+
+.forJoining{
+    display: none;
+    padding: 15px 30px 5px 30px;
+    color: rgb(255, 115, 0);
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Dosis', sans-serif;
+    width: fit-content;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+.show{
+    display:block;
+    animation: pop 0.25s ease-in-out;
+}
+
+.popout {
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+}
+@keyframes popout {
+    from{transform:scale(0)}
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
+}
+
+.main_s_box{
+    padding-left: 4rem;
+    padding-top: 4rem;
+}
+
+.row{
+    --bs-gutter-x : 0;
+}
+
+.left{
+    padding: none;
+}
+
+.wel{
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: rgb(5, 5, 75);;
+}
+
+.wel-para{
+    padding: .5rem;
+    font-size: .9rem;
+    color: grey;
+}
+
+.right{
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.username{
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    padding: 1rem;
+}
+
+.mail{
+    background-color: rgb(225, 246, 252);
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    padding: 1rem;
+}
+
+.pass{
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    padding: 1rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+
+.pass_div_left ,.mail_div_right , .username_div_right{
+    padding-left: .5rem;
+}
+
+.form-group label{
+  padding-left: .6rem;
+  font-size: .9rem;
+  color: grey;
+}
+
+.input_div{
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 1.1rem;
+}
+
+.input_div:hover{
+    text-decoration: underline;
+}
+
+.mail_div_left ,.pass_div_right , .username_div_left{
+     padding: .5rem;
+}
+
+.btn_signIn {
+   padding-left: 2rem;
+   padding-right: 2rem;
+   border-radius: .5rem;
+   margin: 1rem;
+}
+
+.IncPass{
+  display: none;
+  padding: 1rem;
+  color: red;
+}
+
+.notCorrect{
+    display: block;
+}

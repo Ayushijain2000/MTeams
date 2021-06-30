@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/sign.css">
+
+
+</head>
+
+<body>
+  <img src="./utils/homeImg/MLogo.png" class="logo_img" alt="" height="80px" width="80px"><span class="title_head">MTeams</span>
+  <div class="row main_s_box">
+    <div class="col-lg-7 col-md-6 left">
+    <img src="./utils/homeImg/login_bg.png">
+    </div>
+    <div class="col-lg-5 col-md-6 right">
+      <h1 class="wel">Welcome Back:)</h1>
+      <p class="wel-para">To be connected to Mteams please login with your personal details by entering email address and password.</p>
+
+      <form action="/signIn" method="POST">
+
+        <div class="form-group mail">
+          <div class="mail_div_left">
+              <img src="./utils/homeImg/mail_icon.png" alt="" height="45px" width="45px" >
+          </div>
+          <div class="mail_div_right">
+          <label for="inputEmail1">Email address</label>
+          <input type="email" class="form-control input_div" name="username" id="inputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        </div>
+
+        <div class="form-group pass">
+          <div class="pass_div_left">
+           <img src="./utils/homeImg/lock_icon.jpeg" alt="" height="45px" width="45px">
+          </div>
+          <div class="pass_div_right">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control input_div" name="password" id="inputPassword" placeholder="Password">
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn_signIn">Login Now</button>
+      </form>
+
+      <div class="IncPass <%=correctPass%>">
+        <p>Incorrect Password, pls try again!!!</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

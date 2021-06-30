@@ -1,0 +1,211 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTeams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;600&family=Padauk&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='./css/style.css'>
+</head>
+
+<body>
+
+    <div class="entire_body_cont">
+
+        <div class="upper_bar">
+            <div class="meeting_info">
+                <button class="info_btn"><span class="info_span">i</span></button>
+            </div>
+            <div id="hide_meeting_info">
+                <button class="close_info_btn"><span class="close_info_span">x</span></button>
+            </div>
+            <div class="title">Mteams</div>
+            <div class="meeting_notes">
+                <button class="notes_btn"><span class="notesSpan">Notes</span></button>
+            </div>
+        </div>
+
+        <div class='main_container'>
+            <!-- The dashboard container -->
+            <div class='dashboard_container' id="dashBoard">
+                <div class='logo_container'>
+                    <img src='./utils/images/logoMteams.png' height="60px"></img>
+                </div>
+                <div>
+                    <div class='description_container'>
+                        <p class='description_container_paragraph'>
+                            Share this meeting passcode with the person you wnat to connect or put his code to
+                            connect.
+                        </p>
+                    </div>
+                    <div class='personal_code_container'>
+                        <div class='personal_code_title_container'>
+                            <p class='personal_code_title_paragraph'>
+                                Your Personal Code
+                            </p>
+                        </div>
+                        <div class="personal_code_value_container">
+                            <p class='personal_code_value_paragraph' id='personal_code_paragraph'>AAAAAA</p>
+                            <button class='personal_code_copy_button' id='personal_code_copy_button'>
+                                <img src='./utils/images/copyButton.png'></img>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class='personal_code_connecting_container'>
+                    <p class='personal_code_connecting_paragraph'>Personal Code</p>
+                    <div class='personal_code_connecting_input_container'>
+                        <input class='personal_code_input' id='personal_code_input'></input>
+                    </div>
+                    <div class='personal_code_connecting_buttons_container'>
+                        <button class='connecting_button' id='personal_code_chat_button'>
+                            <img src='./utils/images/chatButton.png' class='connecting_buttons_image'
+                                height="30px"></img>
+                        </button>
+                        <button class='connecting_button display_none' id='personal_code_video_button'>
+                            <img src='./utils/images/video_Button.png' class='connecting_buttons_image'
+                                height="30px"></img>
+                        </button>
+                    </div>
+                </div>
+                <div class='dashboard_blur display_none' id='dashboard_blur'></div>
+
+            </div> <!-- dashboard ends here -->
+
+            <div class="notes_cont display_none">
+                <h4 class="notes_title">Notes</h4>
+                <form action="/index" class="notes_form">
+                    <textarea name="notes" id="notes" cols="30" rows="24" class="notes_textarea"></textarea>
+                    <div class="downtext">
+                        <input type="button" id="bt" value="Save Notes On Machine" onclick="saveFile()" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- watch -->
+            <div class="watch_cont">
+                <div id="clock" class="display_none">
+                    <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+                </div>
+            </div>
+
+            <!-- main call conatiner where the video will appear -->
+            <div class='call_container'>
+                <div class='videos_container'>
+                    <div id='video_placeholder' class='videos_placeholder'>
+                        <div class="placeholder_space">
+                            <img src='./utils/images/placeholder.png' class="placeh" height="120px"></img>
+                        </div>
+                    </div>
+                    <video class='remote_video display_none' muted autoplay id='remote_video'></video>
+                    <div class='local_video_container'>
+                        <video class='local_video' id='local_video' muted autoplay></video>
+                    </div>
+                    <div class='call_buttons_container display_none' id='call_buttons'>
+                        <button class='call_button_small' id='mic_button'>
+                            <img src='./utils/images/mic.png' id='mic_button_image'></img>
+                        </button>
+                        <button class='call_button_small' id='camera_button'>
+                            <img src='./utils/images/camera.png' id='camera_button_image'></img>
+                        </button>
+                        <button class='call_button_large' id='hang_up_button'>
+                            <img src='./utils/images/hangUp.png'></img>
+                        </button>
+                        <button class='call_button_small' id='screen_sharing_button'>
+                            <img src='./utils/images/switchCameraScreenSharing.png'></img>
+                        </button>
+                        <button class='call_button_small' id='start_recording_button'>
+                            <img src='./utils/images/recordingStart.png'></img>
+                        </button>
+                    </div>
+                    <div class='finish_chat_button_container display_none' id='finish_chat_button_container'>
+                        <button class='call_button_large' id='finish_chat_call_button'>
+                            <img src='./utils/images/hangUp.png'></img>
+                        </button>
+                    </div>
+                    <div class='video_recording_buttons_container display_none' id='video_recording_buttons'>
+                        <button id='pause_recording_button'>
+                            <img src='./utils/images/pause.png'></img>
+                        </button>
+                        <button id='resume_recording_button' class='display_none'>
+                            <img src='./utils/images/resume.png'></img>
+                        </button>
+                        <button id='stop_recording_button'>
+                            Stop recording
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class='messenger_container'>
+                <div class='messages_container' id='messages_container'></div>
+                <div class='new_message_container' id='new_message'>
+                    <input class='new_message_input' id='new_message_input' type='text'
+                        placeholder="Type your message..."></input>
+
+                    <button class='send_message_button' id='send_message_button'>
+                        <img class='send_message_button_image' src='./utils/images/sendMessageButton.png'></image>
+                    </button>
+                </div>
+            </div>
+
+            <div id="dialog"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let saveFile = () => {
+
+            // Get the data from each element on the form.
+            const msg = document.getElementById('notes');
+
+            // This variable stores all the data.
+            let data =
+                'Meeting Notes: ' + msg.value;
+
+            // Convert the text to BLOB.
+            const textToBLOB = new Blob([data], { type: 'text/plain' });
+            const sFileName = 'formData.txt';	   // The file to save the data.
+
+            let newLink = document.createElement("a");
+            newLink.download = sFileName;
+
+            if (window.webkitURL != null) {
+                newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            }
+            else {
+                newLink.href = window.URL.createObjectURL(textToBLOB);
+                newLink.style.display = "none";
+                document.body.appendChild(newLink);
+            }
+
+            newLink.click();
+        }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src='./socket.io/socket.io.js'></script>
+    <script src='./recordingUtils.js' type='module'></script>
+    <script src='./js/elements.js' type='module'></script>
+    <script src='./js/constants.js' type='module'></script>
+    <script src='./js/wss.js' type='module'></script>
+    <script src='./js/ui.js' type='module'></script>
+    <script src='./js/store.js' type='module'></script>
+    <script src='./js/webRTCHandler.js' type='module'></script>
+    <script src='./js/dash.js' type='module'></script>
+    <script src='./js/main.js' type='module'></script>
+    <script src='./js/timer.js'></script>
+</body>
+
+</html>
