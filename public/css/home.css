@@ -44,7 +44,6 @@
 }
 
 #btn_register:hover{
-    /* background-color: rgb(16, 208, 241); */
     border: 1px solid rgb(5, 5, 75);
     color: rgb(5, 18, 75);
 }
@@ -123,10 +122,140 @@
     /* background-color: blue; */
 }
 
+.bg-image{
+  padding-bottom: 10px;
+}
+
+.row1, .row2 ,.row3{
+}
+
 .hidden{
     display: none;
 }
 
 .user_icon_img{
     margin: 0 .4rem  0 .4rem;
+}
+
+.section2{
+    height: 720px;
+}
+
+.heading_of_features_cont{
+    padding: 34px;
+    text-align: center;
+}
+
+.heading_of_features{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+}
+
+.fcont{
+    text-align: center;
+}
+
+.fitem{
+    margin: 2rem;
+    margin-bottom: 1rem;
+    height: 6rem;
+    width: 6rem;
+    border: 2px solid black;
+    border-radius: 100%;
+    box-shadow:  5px 5px 5px 5px #c6ccda;
+}
+
+.fitem:hover{
+    margin: 1rem;
+    height: 6.5rem;
+    width: 6.5rem;
+    box-shadow: none;
+}
+
+.para_features{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: .2rem;
+}
+
+.video_cont , .ss_cont , .chat_cont{
+    /* padding-left: 15rem; */
+    padding-right: 0px;
+}
+
+.video_cont, .chat_cont{
+  padding-left: 8rem;
+}
+
+.ss_cont {
+    padding-left: .5rem;
+}
+
+.notes_cont , .rec_cont , .call_cont{
+    padding-left: 0px;
+}
+.notes_cont , .call_cont{
+   padding-right: 8rem;
+}
+
+.Mteams_cont{
+  text-align: center;
+  border-radius: 100%;
+  padding: auto;
+  background-color: rgb(222, 242, 248);
+  box-shadow:  5px 5px 5px 5px #c6ccda;
+}
+
+.Mteams_name{
+    margin-top: 4.5rem;
+    margin-left: 12px;
+    height: 40px;
+    /* width: 9rem; */
+}
+
+.right_main_cont{
+    margin: 3rem 3rem 3rem 0;
+    border-radius: 20px;
+    box-shadow:  5px 5px 5px 5px #c6ccda;
+}
+.right_upper{
+    background-color: white;
+    height: 300px;
+    padding: 2rem;
+    border: .2px solid rgb(216, 215, 215);
+    border-radius: 20px 20px 0 0;
+    box-shadow:  10px 10px 10px 0px #c6ccda;
+}
+
+.feature_name{
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 4rem;
+    color: rgb(2, 2, 75);
+    line-height: 40px;
+}
+
+.right_below{
+    background-color: rgb(4, 5, 83);
+    color: white;
+    padding: 2rem;
+    height: 200px;
+    border-radius: 0 0 20px 20px;
+    box-shadow:  0px 10px 10px 10px #c6ccda;
+}
+
+.feature_Type_Cont{
+    text-align: left;
+}
+
+.para_right_below{
+    /* font-family: 'Dosis', sans-serif; */
+    font-size: 16px;
+}
+
+.footer{
+    background-color: rgb(27, 3, 83);
+    color: white;
+    text-align: center;
 }

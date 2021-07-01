@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 const server = http.createServer(app);
-const io = require("socket.io")(server);
+const io = require("socket.io")();
 
 app.set("view engine","ejs");
 
@@ -91,24 +91,6 @@ app.post("/register", function (req, res) {
   })
 });
 
-// app.post("/signIn", function (req, res) {
-//   const user = new User({
-//       username: req.body.username,
-//       password: req.body.password
-//   })
-
-//   req.login(user, function(err){
-//       if(err){
-//           console.log(err);
-//       } else {
-
-//           passport.authenticate("local")(req, res, function(){
-//               res.redirect("/");
-//           });
-//       }
-//   })
-// })
-
 app.post("/signIn", function (req, res) {
   const user = new User({
       username: req.body.username,
@@ -118,14 +100,13 @@ app.post("/signIn", function (req, res) {
   req.login(user, function(err){
       if(err){
           console.log(err);
-          res.redirect("signIn" , {correctPass : "notCorrect"});
       } else {
        passport.authenticate("local")(req, res, function(){
               res.redirect("/");
           });
       }
-  })
-})
+  });
+});
 
 let connectedPeers = [];
 

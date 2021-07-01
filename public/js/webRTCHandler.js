@@ -37,7 +37,6 @@ export const getLocalPreview = () => {
 
 const createPeerConnection = () => {
   peerConection = new RTCPeerConnection(configuration);
-
   dataChannel = peerConection.createDataChannel("chat");
 
   peerConection.ondatachannel = (event) => {
@@ -69,7 +68,6 @@ const createPeerConnection = () => {
   peerConection.onconnectionstatechange = (event) => {
     if (peerConection.connectionState === "connected") {
       console.log("succesfully connected with other peer");
-
     }
   };
 
