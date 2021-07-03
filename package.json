@@ -1,5 +1,5 @@
 {
-  "name": "meet-the-strangers",
+  "name": "Mteams",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "Marek Gryszkiewicz",
+  "author": "Ayushi",
   "license": "ISC",
   "engines": {
     "node": "14.15.4"
