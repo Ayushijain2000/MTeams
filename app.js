@@ -12,16 +12,16 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 const server = http.createServer(app);
-const io = require("socket.io")();
+const io = require("socket.io")(server);
 
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
 app.use(session({
-  secret : "Our little secret.",
+  secret: "Our little secret.",
   resave: false,
   saveUninitialized: false
 }));
@@ -29,8 +29,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/MteamsUsers', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.set("useCreateIndex",true);
+// mongoose.connect('mongodb://localhost:27017/MteamsUsers', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://admin-ayushi:ayushi10@cluster0.lfdqy.mongodb.net/MteamsUsers', { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
   email: String,
@@ -49,27 +51,27 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get("/", (req, res) => {
-  if(req.isAuthenticated()){
-    res.render("home" , {loginRequired : "hidden" , logoutRequired : ""});
-  }else{
-    res.render("home" , {loginRequired : "" , logoutRequired : "hidden"});
+  if (req.isAuthenticated()) {
+    res.render("home", { loginRequired: "hidden", logoutRequired: "" });
+  } else {
+    res.render("home", { loginRequired: "", logoutRequired: "hidden" });
   }
 });
 
 app.get("/index", (req, res) => {
-  if(req.isAuthenticated()){
-  res.render("index");
-  }else{
-    res.render("register" , {showMessage : "show"});
+  if (req.isAuthenticated()) {
+    res.render("index");
+  } else {
+    res.render("register", { showMessage: "show" });
   }
 });
 
-app.get("/signIn" , (req,res) => {
-  res.render("signIn" , {correctPass : ""});
+app.get("/signIn", (req, res) => {
+  res.render("signIn", { correctPass: "" });
 });
 
-app.get("/register" , (req,res) => {
-  res.render("register" , {showMessage : ""});
+app.get("/register", (req, res) => {
+  res.render("register", { showMessage: "" });
 });
 
 app.get("/logout", function (req, res) {
@@ -79,32 +81,33 @@ app.get("/logout", function (req, res) {
 
 
 app.post("/register", function (req, res) {
-  User.register({username: req.body.username}, req.body.password, function(err, user){
-      if(err){
-          console.log(err);
-          res.redirect("/register" , {showMessage : ""} );
-      } else {
-          passport.authenticate("local")(req, res, function(){
-              res.redirect("/");
-          });
-      }
+  User.register({ username: req.body.username }, req.body.password, function (err, user) {
+    if (err) {
+      console.log(err);
+      res.redirect("/register", { showMessage: "" });
+    } else {
+      passport.authenticate("local")(req, res, function () {
+        res.redirect("/");
+      });
+    }
   })
 });
 
 app.post("/signIn", function (req, res) {
   const user = new User({
-      username: req.body.username,
-      password: req.body.password
+    username: req.body.username,
+    password: req.body.password
   })
 
-  req.login(user, function(err){
-      if(err){
-          console.log(err);
-      } else {
-       passport.authenticate("local")(req, res, function(){
-              res.redirect("/");
-          });
-      }
+  req.login(user, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      passport.authenticate("local")(req, res, function () {
+        console.log(res.body)
+        res.redirect("/");
+      });
+    }
   });
 });
 
@@ -114,21 +117,17 @@ io.on("connection", (socket) => {
   connectedPeers.push(socket.id);
 
   socket.on("pre-offer", (data) => {
-    console.log("pre-offer-came");
-    const { calleePersonalCode, callType } = data;
-    console.log(calleePersonalCode);
-    console.log(connectedPeers);
+    const { calleePersonalCode, callType} = data;
     const connectedPeer = connectedPeers.find(
       (peerSocketId) => peerSocketId === calleePersonalCode
     );
-
-    console.log(connectedPeer);
 
     if (connectedPeer) {
       const data = {
         callerSocketId: socket.id,
         callType,
       };
+      
       io.to(calleePersonalCode).emit("pre-offer", data);
     } else {
       const data = {
@@ -162,18 +161,35 @@ io.on("connection", (socket) => {
     }
   });
 
-  socket.on("user-hanged-up" , (data) =>{
-     const {connectedUserSocketId} = data;
+  socket.on("user-hanged-up", (data) => {
+    const { connectedUserSocketId } = data;
 
-     const connectedPeer = connectedPeers.find(
+    const connectedPeer = connectedPeers.find(
       (peerSocketId) => peerSocketId === connectedUserSocketId
     );
 
-    if(connectedPeer){
+    if (connectedPeer) {
       io.to(connectedUserSocketId).emit("user-hanged-up");
     }
 
-  })
+  });
+
+  socket.on('emoji-offer', (data) =>{
+    // console.log(data);
+    const { calleePersonalCode, emojiType } = data;
+
+    const connectedPeer = connectedPeers.find(
+      (peerSocketId) => peerSocketId === calleePersonalCode
+    );
+
+    if (connectedPeer) {
+      const data = {
+        callerSocketId: socket.id,
+        emojiType,
+      };
+      io.to(calleePersonalCode).emit("emoji-offer", data);
+    } 
+  });
 
   socket.on("disconnect", () => {
     console.log("user disconnected");

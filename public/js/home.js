@@ -2,8 +2,6 @@ import * as feature from "./features.js";
 
 const features = feature.getFeatures();
 
-console.log(features[0].name);
-
 $(".video_cont").click(function(){
     $(".para_right_below").html(features[0].fpara) , $("#featureImage").attr("src" , features[0].img) , $(".feature_name").html(features[0].name); 
 });
@@ -26,4 +24,12 @@ $(".chat_cont").click(function(){
 
 $(".call_cont").click(function(){
     $(".para_right_below").html(features[2].fpara) , $("#featureImage").attr("src" , features[2].img) , $(".feature_name").html(features[2].name); 
+});
+
+$(".reaction_cont").click(function(){
+    $(".para_right_below").html(features[6].fpara) , $("#featureImage").attr("src" , features[6].img) , $(".feature_name").html(features[6].name); 
+});
+
+$(".clock_cont").click(function(){
+    $(".para_right_below").html(features[7].fpara) , $("#featureImage").attr("src" , features[7].img) , $(".feature_name").html(features[7].name); 
 });

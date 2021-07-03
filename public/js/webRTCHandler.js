@@ -54,7 +54,7 @@ const createPeerConnection = () => {
   };
 
   peerConection.onicecandidate = (event) => {
-    console.log("geeting ice candidates from stun server");
+    console.log("getting ice candidates from stun server");
     if (event.candidate) {
       // send our ice candidates to other peer
       wss.sendDataUsingWebRTCSignaling({
@@ -93,12 +93,13 @@ const createPeerConnection = () => {
   }
 };
 
+
 export const sendMessageUsingDataChannel = (message) => {
   const stringifiedMessage = JSON.stringify(message);
   dataChannel.send(stringifiedMessage);
 };
 
-export const sendPreOffer = (callType, calleePersonalCode) => {
+export const sendPreOffer = (callType, calleePersonalCode , personalCode) => {
   connectedUserDetails = {
     callType,
     socketId: calleePersonalCode,
@@ -111,12 +112,19 @@ export const sendPreOffer = (callType, calleePersonalCode) => {
     const data = {
       callType,
       calleePersonalCode,
+      personalCode,
     };
+
+    // console.log("web");
+    // console.log(data);
+
     ui.showCallingDialog(callingDialogRejectCallHandler);
     store.setCallState(constants.callState.CALL_UNAVAILABLE);
     wss.sendPreOffer(data);
   }
 };
+
+
 
 export const handlePreOffer = (data) => {
   const { callType, callerSocketId } = data;
@@ -137,8 +145,25 @@ export const handlePreOffer = (data) => {
     callType === constants.callType.VIDEO_PERSONAL_CODE
   ) {
     console.log("showing call dialog");
+    // console.log(data);
+    const ps = document.getElementById(
+      "personal_code_input");
+    ps.value = data.callerSocketId;
     ui.showIncomingCallDialog(callType, acceptCallHandler, rejectCallHandler);
   }
+};
+
+export const handleEmojiOffer = (data) =>{
+  ui.showEmojiDialog(data.emojiType);
+};
+
+export const sendEmojiOffer = (emojiType , calleePersonalCode) =>{
+  const data ={
+    emojiType,
+    calleePersonalCode
+  }
+  ui.showEmojiDialog(emojiType);
+  wss.sendEmojiOffer(data);
 };
 
 const acceptCallHandler = () => {
@@ -150,6 +175,9 @@ const acceptCallHandler = () => {
 
 const rejectCallHandler = () => {
   console.log("call rejected");
+  const ps = document.getElementById(
+    "personal_code_input");
+  ps.value = "";
   sendPreOfferAnswer();
   setComingCallsAvailable();
   sendPreOfferAnswer(constants.preOfferAnswer.CALL_REJECTED);
@@ -332,7 +360,11 @@ const endConnectionAndReset = () =>{
       store.getState().localStream.getAudioTracks()[0].enabled = true;
 
     }
+    
     ui.updateUIAgain(connectedUserDetails.callType);
+    const ps = document.getElementById(
+      "personal_code_input");
+    ps.value = "";
     setComingCallsAvailable();
     connectedUserDetails = null;
 

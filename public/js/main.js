@@ -36,9 +36,12 @@ personalCodeChatButton.addEventListener("click", () => {
   const calleePersonalCode = document.getElementById(
     "personal_code_input"
   ).value;
-  const callType = constants.callType.CHAT_PERSONAL_CODE;
 
-  webRTCHandler.sendPreOffer(callType, calleePersonalCode);
+  const callType = constants.callType.CHAT_PERSONAL_CODE;
+  const personalCode = store.getState().socketId;
+  // console.log(personalCode);
+
+  webRTCHandler.sendPreOffer(callType, calleePersonalCode, personalCode);
 });
 
 personalCodeVideoButton.addEventListener("click", () => {
@@ -48,9 +51,60 @@ personalCodeVideoButton.addEventListener("click", () => {
     "personal_code_input"
   ).value;
   const callType = constants.callType.VIDEO_PERSONAL_CODE;
+  const personalCode = store.getState().socketId;
+  // console.log(personalCode);
 
-  webRTCHandler.sendPreOffer(callType, calleePersonalCode);
+  webRTCHandler.sendPreOffer(callType, calleePersonalCode, personalCode);
 });
+
+//event listeners for reaction buttons
+
+document.getElementById("clap").addEventListener("click" , () => {
+  const calleePersonalCode = document.getElementById(
+    "personal_code_input").value;
+
+ var emojiType = constants.emojiType.CLAP;
+//  console.log(emojiType);
+  webRTCHandler.sendEmojiOffer(emojiType , calleePersonalCode);
+});
+
+document.getElementById("thumbUp").addEventListener("click" , () => {
+  const calleePersonalCode = document.getElementById(
+    "personal_code_input").value;
+
+  var emojiType = constants.emojiType.THUMB;
+  // console.log(emojiType);
+  webRTCHandler.sendEmojiOffer(emojiType , calleePersonalCode);
+});
+
+document.getElementById("happy").addEventListener("click" , () => {
+  const calleePersonalCode = document.getElementById(
+    "personal_code_input").value;
+
+  var emojiType = constants.emojiType.HAPPY;
+  // console.log(emojiType);
+  webRTCHandler.sendEmojiOffer(emojiType , calleePersonalCode);
+});
+
+document.getElementById("sad").addEventListener("click" , () => {
+  const calleePersonalCode = document.getElementById(
+    "personal_code_input").value;
+
+  var emojiType = constants.emojiType.SAD;
+  // console.log(emojiType);
+  webRTCHandler.sendEmojiOffer(emojiType , calleePersonalCode);
+});
+
+document.getElementById("party").addEventListener("click" , () => {
+  const calleePersonalCode = document.getElementById(
+    "personal_code_input").value;
+
+  var emojiType = constants.emojiType.PARTY;
+  // console.log(emojiType);
+  webRTCHandler.sendEmojiOffer(emojiType , calleePersonalCode);
+});
+
+
 
 // event listeners for video call buttons
 

@@ -39,7 +39,6 @@ export const showIncomingCallDialog = (
     acceptCallHandler,
     rejectCallHandler
   );
-
   // removing all dialogs inside HTML dialog element
   const dialog = document.getElementById("dialog");
   dialog.querySelectorAll("*").forEach((dialog) => dialog.remove());
@@ -91,10 +90,27 @@ export const showInfoDialog = (preOfferAnswer) => {
   }
 };
 
+export const showEmojiDialog = (emojiType) =>{
+  var Incomingemoji = elements.getEmojiDialog(emojiType);
+  var emojiplace = document.getElementById("emojiDialog");
+
+  emojiplace.appendChild(Incomingemoji);
+  
+  setTimeout(() => {
+    removeAllEmojis();
+  }, [4000]);
+
+};
+
 export const removeAllDialogs = () => {
   const dialog = document.getElementById("dialog");
   dialog.querySelectorAll("*").forEach((dialog) => dialog.remove());
 };
+
+export const removeAllEmojis = () =>{
+  const emojiArea =  document.getElementById("emojiDialog");
+  emojiArea.querySelectorAll("*").forEach((emojiArea) => emojiArea.remove());
+}
 
 export const showCallElements = (callType) => {
   if (callType === constants.callType.CHAT_PERSONAL_CODE) {

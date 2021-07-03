@@ -23,3 +23,11 @@ export const callState = {
   CALL_UNAVAILABLE: 'CALL_UNAVAILBALE',
   CALL_AVAILABLE_ONLY_CHAT: 'CALL_AVAILABLE_ONLY_CHAT',
 };
+
+export const emojiType = {
+  HAPPY:'HAPPY',
+  THUMB: 'THUMB',
+  CLAP: 'CLAP',
+  SAD: 'SAD',
+  PARTY: 'PARTY',
+}

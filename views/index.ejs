@@ -101,7 +101,7 @@
             </div>
 
             <!-- watch -->
-            <div class="watch_cont display_none">
+            <div class="watch_cont">
                 <div id="clock" class="">
                     <p><span id="seconds">00</span>:<span id="tens">00</span></p>
                 </div>
@@ -135,6 +135,9 @@
                         <button class='call_button_small' id='start_recording_button'>
                             <img src='./utils/images/recordingStart.png' alt="REC"></img>
                         </button>
+                        <button class="call_button_small" id="reactionBtn">
+                            <img src="./utils/images/reaction.png" alt="rect" height="50px">
+                        </button>
                     </div>
                     <div class='finish_chat_button_container display_none' id='finish_chat_button_container'>
                         <button class='call_button_large' id='finish_chat_call_button'>
@@ -152,6 +155,23 @@
                             Stop recording
                         </button>
                     </div>
+                    <div class="emoji_holder display_none">
+                        <div class="clap small_emoji" id="clap">
+                            <img class="small_emoji_image" src="./utils/images/Clapping.png" alt="clap">
+                        </div>
+                        <div class="thumpUp small_emoji" id="thumbUp">
+                            <img class="small_emoji_image" src="./utils/images/thumbs_small.png" alt="thumsUp">
+                        </div>
+                        <div class="happy small_emoji" id="happy">
+                            <img class="small_emoji_image" src="./utils/images/smiley_small.png" alt="happy">
+                        </div>
+                        <div class="sad small_emoji" id="sad">
+                            <img class="small_emoji_image" src="./utils/images/sad_small.png" alt="sad">
+                        </div>
+                        <div class="party small_emoji" id="party">
+                            <img class="small_emoji_image" src="./utils/images/confetti_small.png" alt="party">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class='messenger_container'>
@@ -166,8 +186,9 @@
                 </div>
             </div>
 
+            <div id="emojiDialog"></div>
             <div id="dialog"></div>
-
+            
         </div>
 
     </div>

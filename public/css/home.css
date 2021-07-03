@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     background-color: white;
+    height: 800px;
 }
 
 .section1:before {
@@ -20,7 +21,6 @@
 
 /* navbar */
 .navbar{
-   /* background-color: rgb(252, 249, 249 ); */
    padding-top: 1rem;
    background: transparent;
    z-index: 1;
@@ -119,14 +119,6 @@
     height: 40px;
     position: relative;
     z-index: 1;
-    /* background-color: blue; */
-}
-
-.bg-image{
-  padding-bottom: 10px;
-}
-
-.row1, .row2 ,.row3{
 }
 
 .hidden{
@@ -138,12 +130,13 @@
 }
 
 .section2{
-    height: 720px;
+    height: 770px;
 }
 
 .heading_of_features_cont{
     padding: 34px;
     text-align: center;
+    padding-top: 10px;
 }
 
 .heading_of_features{
@@ -166,9 +159,8 @@
 }
 
 .fitem:hover{
-    margin: 1rem;
-    height: 6.5rem;
-    width: 6.5rem;
+    height: 7rem;
+    width: 7rem;
     box-shadow: none;
 }
 
@@ -179,25 +171,43 @@
     padding-top: .2rem;
 }
 
-.video_cont , .ss_cont , .chat_cont{
-    /* padding-left: 15rem; */
-    padding-right: 0px;
-}
-
 .video_cont, .chat_cont{
-  padding-left: 8rem;
+  padding-left: 6rem;
 }
 
-.ss_cont {
-    padding-left: .5rem;
-}
-
-.notes_cont , .rec_cont , .call_cont{
+/* .notes_cont , .rec_cont , .call_cont{
     padding-left: 0px;
-}
+} */
 .notes_cont , .call_cont{
-   padding-right: 8rem;
+   padding-right: 6rem;
 }
+
+.video_img , .notes_img{
+    margin-top: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.react_img{
+  margin-top: 0px;
+}
+
+.clock_img{
+    margin-top: 6.4rem;
+    margin-bottom: 0px;
+}
+
+.rec_img{
+  margin-right: 0px;
+}
+
+.ss_img{
+  margin-left: 0px;
+}
+
+.notes_img , .chat_img{
+    margin-left: 0px;
+}
+
 
 .Mteams_cont{
   text-align: center;
@@ -250,7 +260,6 @@
 }
 
 .para_right_below{
-    /* font-family: 'Dosis', sans-serif; */
     font-size: 16px;
 }
 

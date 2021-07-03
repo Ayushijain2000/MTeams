@@ -6,7 +6,7 @@ const vp9Codec = "video/webm; codecs=vp=9";
 const vp9Options = { mimeType: vp9Codec };
 const recordedChunks = [];
 
-export const start = () => {
+export const startRecording = () => {
   const remoteStream = store.getState().remoteStream;
 
   if (MediaRecorder.isTypeSupported(vp9Codec)) {
@@ -52,4 +52,3 @@ const handleDataAvailable = (event) => {
     downloadRecordedVideo();
   }
 };
-

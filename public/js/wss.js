@@ -5,6 +5,8 @@ import * as constants from "./constants.js";
 
 let socketIO = null;
 
+// defining listener events
+
 export const registerSocketEvents = (socket) => {
   socketIO = socket;
 
@@ -15,6 +17,8 @@ export const registerSocketEvents = (socket) => {
   });
 
   socket.on("pre-offer", (data) => {
+    // console.log("i am here");
+    // console.log(data); 
     webRTCHandler.handlePreOffer(data);
   });
 
@@ -41,10 +45,19 @@ export const registerSocketEvents = (socket) => {
         return;
     }
   });
+
+  socket.on('emoji-offer' , (data) =>{
+     webRTCHandler.handleEmojiOffer(data);
+  });
+
 };
+
+// defining emitting events
 
 export const sendPreOffer = (data) => {
   console.log("emmiting to server pre offer event");
+  // console.log("wss");
+  // console.log(data);
   socketIO.emit("pre-offer", data);
 };
 
@@ -58,4 +71,8 @@ export const sendDataUsingWebRTCSignaling = (data) => {
 
 export const sendUserHangedUp = (data) =>{
   socketIO.emit('user-hanged-up' , data);
+};
+
+export const sendEmojiOffer = (data) =>{
+  socketIO.emit('emoji-offer' , data);
 };

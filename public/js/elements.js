@@ -1,3 +1,5 @@
+import * as constants from "./constants.js";
+
 export const getIncomingCallDialog = (
   callTypeInfo,
   acceptCallHandler,
@@ -47,6 +49,7 @@ export const getIncomingCallDialog = (
   dialogContent.appendChild(buttonContainer);
 
   acceptCallButton.addEventListener("click", () => {
+    // document.getElementById("reactionBtn").style.display = "none";
     acceptCallHandler();
   });
 
@@ -147,3 +150,41 @@ export const getRightMessage = (message) => {
 
   return messageContainer;
 };
+
+export const getEmojiDialog = (emojiType) => {
+  var emojiPlace = document.createElement("div");
+
+  var imageContainer = document.createElement("div");
+  imageContainer.classList.add("emoji_image");
+  const image = document.createElement("img");
+  var EmojiImagePath = "";
+  
+  if(emojiType === constants.emojiType.CLAP)
+  {
+    EmojiImagePath = "./utils/images/GIFClap.gif";
+
+  } else if(emojiType === constants.emojiType.HAPPY){
+
+    EmojiImagePath = "./utils/images/GIFhappy.gif";
+
+  }else if(emojiType === constants.emojiType.SAD){
+
+    EmojiImagePath = "./utils/images/GIFsad.gif";
+
+  }else if(emojiType === constants.emojiType.THUMB){
+
+    EmojiImagePath = "./utils/images/GIFthumbsUp.gif";
+
+  }else if(emojiType === constants.emojiType.PARTY){
+    EmojiImagePath = "./utils/images/GIFParty.gif"; 
+  }
+
+  image.src = EmojiImagePath;
+  imageContainer.appendChild(image);
+
+  emojiPlace.appendChild(imageContainer);
+
+  return emojiPlace;
+}
+
+
