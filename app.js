@@ -8,7 +8,10 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+  PORT = 3000;
+}
 const app = express();
 
 const server = http.createServer(app);
