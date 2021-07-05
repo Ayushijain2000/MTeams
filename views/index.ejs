@@ -14,10 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;600&family=Padauk&display=swap"
         rel="stylesheet">
-    
+
     <!-- favicon link -->
     <link rel="icon" href="./utils/homeImg/favicon.ico">
-    
+
     <!-- style sheet link-->
     <link rel='stylesheet' href='./css/style.css'>
 </head>
@@ -91,11 +91,11 @@
                 <h4 class="notes_title">Notes</h4>
                 <form action="/index" class="notes_form">
                     <labe for="notesArea"></labe>
-                    <textarea name="notes" id="notes" cols="30" rows="24" class="notes_textarea"></textarea>
+                    <textarea name="notes" id="notes" cols="30" rows="18" class="notes_textarea"></textarea>
 
                     <!-- for downloading the notes -->
                     <div class="downtext">
-                        <input type="button" id="bt" value="Save Notes On Device"/>
+                        <input type="button" id="bt" value="Save Notes On Device" />
                     </div>
                 </form>
             </div>
@@ -112,32 +112,37 @@
                 <div class='videos_container'>
                     <div id='video_placeholder' class='videos_placeholder'>
                         <div class="placeholder_space">
-                            <img src='./utils/images/placeholder.png' alt="Mteams" class="placeh" height="120px" width="110px"></img>
+                            <img src='./utils/images/placeholder.png' alt="Mteams" class="placeh" height="120px"
+                                width="110px"></img>
                         </div>
                     </div>
-                    <video class='remote_video display_none' muted autoplay id='remote_video'></video>
+                    <video class='remote_video display_none' autoplay id='remote_video'></video>
                     <div class='local_video_container'>
-                        <video class='local_video' id='local_video' muted autoplay></video>
+                        <video class='local_video' id='local_video' autoplay></video>
                     </div>
-                    <div class='call_buttons_container display_none' id='call_buttons'>
-                        <button class='call_button_small' id='mic_button'>
-                            <img src='./utils/images/mic.png' alt="MicBtn" id='mic_button_image'></img>
-                        </button>
-                        <button class='call_button_small' id='camera_button'>
-                            <img src='./utils/images/camera.png' alt="cameraBtn" id='camera_button_image'></img>
-                        </button>
-                        <button class='call_button_large' id='hang_up_button'>
-                            <img src='./utils/images/hangUp.png' alt="hangUpImg"></img>
-                        </button>
-                        <button class='call_button_small' id='screen_sharing_button'>
-                            <img src='./utils/images/switchCameraScreenSharing.png' alt="ScreenShare"></img>
-                        </button>
-                        <button class='call_button_small' id='start_recording_button'>
-                            <img src='./utils/images/recordingStart.png' alt="REC"></img>
-                        </button>
-                        <button class="call_button_small" id="reactionBtn">
-                            <img src="./utils/images/reaction.png" alt="rect" height="50px">
-                        </button>
+                    <div class='call_buttons_container'>
+                        <div class="outer_buttons">
+                            <button class='call_button_small' id='mic_button'>
+                                <img src='./utils/images/mic.png' alt="MicBtn" id='mic_button_image'></img>
+                            </button>
+                            <button class='call_button_small' id='camera_button'>
+                                <img src='./utils/images/camera.png' alt="cameraBtn" id='camera_button_image'></img>
+                            </button>
+                        </div>
+                        <div class="inner_call_Buttons display_none" id='call_buttons'>
+                            <button class='call_button_small' id='screen_sharing_button'>
+                                <img src='./utils/images/switchCameraScreenSharing.png' alt="ScreenShare"></img>
+                            </button>
+                            <button class='call_button_small' id='start_recording_button'>
+                                <img src='./utils/images/recordingStart.png' alt="REC"></img>
+                            </button>
+                            <button class="call_button_small" id="reactionBtn">
+                                <img src="./utils/images/reaction.png" alt="rect"></img>
+                            </button>
+                            <button class='call_button_large' id='hang_up_button'>
+                                <img src='./utils/images/hangUp.png' alt="hangUpImg"></img>
+                            </button>
+                        </div>
                     </div>
                     <div class='finish_chat_button_container display_none' id='finish_chat_button_container'>
                         <button class='call_button_large' id='finish_chat_call_button'>
@@ -181,19 +186,20 @@
                         placeholder="Type your message..."></input>
 
                     <button class='send_message_button' id='send_message_button'>
-                        <img class='send_message_button_image'  alt="message" src='./utils/images/sendMessageButton.png' height="18px" width="18px"></image>
+                        <img class='send_message_button_image' alt="message" src='./utils/images/sendMessageButton.png'
+                            height="18px" width="18px"></image>
                     </button>
                 </div>
             </div>
 
             <div id="emojiDialog"></div>
             <div id="dialog"></div>
-            
+
         </div>
 
     </div>
 
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src='./socket.io/socket.io.js'></script>
