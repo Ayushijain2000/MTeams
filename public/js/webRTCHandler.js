@@ -86,7 +86,6 @@ const createPeerConnection = () => {
     connectedUserDetails.callType === constants.callType.VIDEO_PERSONAL_CODE
   ) {
     const localStream = store.getState().localStream;
-
     for (const track of localStream.getTracks()) {
       peerConection.addTrack(track, localStream);
     }
@@ -99,7 +98,7 @@ export const sendMessageUsingDataChannel = (message) => {
   dataChannel.send(stringifiedMessage);
 };
 
-export const sendPreOffer = (callType, calleePersonalCode , personalCode) => {
+export const sendPreOffer = (callType, calleePersonalCode, personalCode) => {
   connectedUserDetails = {
     callType,
     socketId: calleePersonalCode,
@@ -115,9 +114,6 @@ export const sendPreOffer = (callType, calleePersonalCode , personalCode) => {
       personalCode,
     };
 
-    // console.log("web");
-    // console.log(data);
-
     ui.showCallingDialog(callingDialogRejectCallHandler);
     store.setCallState(constants.callState.CALL_UNAVAILABLE);
     wss.sendPreOffer(data);
@@ -129,7 +125,7 @@ export const sendPreOffer = (callType, calleePersonalCode , personalCode) => {
 export const handlePreOffer = (data) => {
   const { callType, callerSocketId } = data;
 
-  if(!checkIfCallPossible()){
+  if (!checkIfCallPossible()) {
     return sendPreOfferAnswer(constants.preOfferAnswer.CALL_UNAVAILABLE, callerSocketId);
   }
 
@@ -153,12 +149,12 @@ export const handlePreOffer = (data) => {
   }
 };
 
-export const handleEmojiOffer = (data) =>{
+export const handleEmojiOffer = (data) => {
   ui.showEmojiDialog(data.emojiType);
 };
 
-export const sendEmojiOffer = (emojiType , calleePersonalCode) =>{
-  const data ={
+export const sendEmojiOffer = (emojiType, calleePersonalCode) => {
+  const data = {
     emojiType,
     calleePersonalCode
   }
@@ -186,13 +182,13 @@ const rejectCallHandler = () => {
 const callingDialogRejectCallHandler = () => {
   // console.log("rejecting the call");
   const data = {
-    connectedUserSocketId : connectedUserDetails.socketId,
+    connectedUserSocketId: connectedUserDetails.socketId,
   };
   endConnectionAndReset();
   wss.sendUserHangedUp(data);
 };
 
-const sendPreOfferAnswer = (preOfferAnswer , callerSocketId = null) => {
+const sendPreOfferAnswer = (preOfferAnswer, callerSocketId = null) => {
   const SocketId = callerSocketId ? callerSocketId : connectedUserDetails.socketId;
   const data = {
     callerSocketId: SocketId,
@@ -334,65 +330,87 @@ export const switchBetweenCameraAndScreenSharing = async (
 
 export const handleHangUp = () => {
   // console.log("hanging up the call");
-  const data ={
-    connectedUserSocketId : connectedUserDetails.socketId,
+  const data = {
+    connectedUserSocketId: connectedUserDetails.socketId,
   };
   wss.sendUserHangedUp(data);
   endConnectionAndReset();
 };
 
-export const handleUserHangedUp = () =>{
-  // console.log("Your peer hanged Up");
+export const continueChatHandler = () => {
+  // console.log("continue chat");
+  const data = {
+    connectedUserSocketId: connectedUserDetails.socketId,
+  };
+  wss.sendUserHangedToContinueChat(data);
+  endConnectionAndResetChat();
+};
+
+export const handleUserHangedUp = () => {
   endConnectionAndReset();
 };
 
-const endConnectionAndReset = () =>{
-    if(peerConection){
-      peerConection.close();
-      peerConection = null;
-    }
+export const handleUserHangedToContinueChat = () => {
+  endConnectionAndResetChat();
+};
 
-    //activate the mic and camera
-    if(
-      connectedUserDetails.callType === constants.callType.VIDEO_PERSONAL_CODE
-    ){
-      store.getState().localStream.getVideoTracks()[0].enabled = true;
-      store.getState().localStream.getAudioTracks()[0].enabled = true;
+export const handleInitialHangUpRequest = () => {
+  ui.showFinalHangUp(handleHangUp, continueChatHandler);
+}
 
-    }
-    
-    ui.updateUIAgain(connectedUserDetails.callType);
-    const ps = document.getElementById(
-      "personal_code_input");
-    ps.value = "";
-    setComingCallsAvailable();
-    connectedUserDetails = null;
+const endConnectionAndReset = () => {
+  if (peerConection) {
+    peerConection.close();
+    peerConection = null;
+  }
 
-  };
+  //activate the mic and camera
+  if (
+    connectedUserDetails.callType === constants.callType.VIDEO_PERSONAL_CODE
+  ) {
+    store.getState().localStream.getVideoTracks()[0].enabled = true;
+    store.getState().localStream.getAudioTracks()[0].enabled = true;
 
-  const checkIfCallPossible = (callType) =>{
-    const callState = store.getState().callState;
- 
-    if(callState === constants.callState.CALL_AVAILABLE){
-      return true;
-    }
- 
-    if((callType === constants.callType.VIDEO_PERSONAL_CODE) && callState === constants.callState.CALL_AVAILABLE_ONLY_CHAT){
-      return false;
-    }
- 
+  }
+
+  ui.updateUIAgain(connectedUserDetails.callType);
+  const ps = document.getElementById(
+    "personal_code_input");
+  ps.value = "";
+  setComingCallsAvailable();
+  connectedUserDetails = null;
+
+};
+
+const endConnectionAndResetChat = () => {
+  store.getState().localStream.getVideoTracks()[0].enabled = false;
+  store.getState().localStream.getAudioTracks()[0].enabled = false;
+
+  ui.updateUIForContinueChat();
+};
+
+
+const checkIfCallPossible = (callType) => {
+  const callState = store.getState().callState;
+
+  if (callState === constants.callState.CALL_AVAILABLE) {
+    return true;
+  }
+
+  if ((callType === constants.callType.VIDEO_PERSONAL_CODE) && callState === constants.callState.CALL_AVAILABLE_ONLY_CHAT) {
     return false;
- };
+  }
+
+  return false;
+};
 
 
- 
-
-export const setComingCallsAvailable = () =>{
+export const setComingCallsAvailable = () => {
   const localStream = store.getState().localStream;
-   
-  if(localStream){
+
+  if (localStream) {
     store.setCallState(constants.callState.CALL_AVAILABLE);
-  }else{
+  } else {
     store.setCallState(constants.callState.CALL_AVAILABLE_ONLY_CHAT);
   }
 };

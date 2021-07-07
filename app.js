@@ -177,6 +177,18 @@ io.on("connection", (socket) => {
 
   });
 
+  socket.on("user-hanged-to-continue-chat" , (data) =>{
+    const { connectedUserSocketId } = data;
+
+    const connectedPeer = connectedPeers.find(
+      (peerSocketId) => peerSocketId === connectedUserSocketId
+    );
+
+    if (connectedPeer) {
+      io.to(connectedUserSocketId).emit("user-hanged-to-continue-chat");
+    }
+  });
+  
   socket.on('emoji-offer', (data) =>{
     // console.log(data);
     const { calleePersonalCode, emojiType } = data;

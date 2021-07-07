@@ -49,7 +49,6 @@ export const getIncomingCallDialog = (
   dialogContent.appendChild(buttonContainer);
 
   acceptCallButton.addEventListener("click", () => {
-    // document.getElementById("reactionBtn").style.display = "none";
     acceptCallHandler();
   });
 
@@ -169,7 +168,7 @@ export const getEmojiDialog = (emojiType) => {
 
   }else if(emojiType === constants.emojiType.SAD){
 
-    EmojiImagePath = "./utils/images/GIFsad.gif";
+    EmojiImagePath = "./utils/images/GIFSad.gif";
 
   }else if(emojiType === constants.emojiType.THUMB){
 
@@ -185,6 +184,59 @@ export const getEmojiDialog = (emojiType) => {
   emojiPlace.appendChild(imageContainer);
 
   return emojiPlace;
+}
+
+export const getConfirmHangUp = (handleHangUp , continueChatHandler) =>{
+  const confirmdialog = document.createElement("div");
+  confirmdialog.classList.add("confirmdialog_wrapper");
+  const dialogContent = document.createElement("div");
+  dialogContent.classList.add("CondirmdialogContent");
+  confirmdialog.appendChild(dialogContent);
+
+  const imgCont = document.createElement("div");
+  imgCont.classList.add("imgWrapper");
+  
+  const EndCallimage = document.createElement("img");
+  EndCallimage.classList.add("confirm_img");
+  const EndCallimagePath = "./utils/images/EndCall.png";
+  EndCallimage.src = EndCallimagePath;
+
+  const continueChatimage = document.createElement("img");
+  continueChatimage.classList.add("confirm_img");
+  const continueChatimagePath = "./utils/images/continueChat.png";
+  continueChatimage.src = continueChatimagePath;
+
+  imgCont.appendChild(EndCallimage);
+  imgCont.appendChild(continueChatimage);
+
+
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("confirmdialog_button_container");
+
+  const ConfirmHangUpButton = document.createElement("button");
+  ConfirmHangUpButton.classList.add("confirm_hangUp_call_button");
+  ConfirmHangUpButton.setAttribute('id',"confirmHangUp");
+  ConfirmHangUpButton.innerHTML="End The call";
+  buttonContainer.appendChild(ConfirmHangUpButton);
+
+  const ContinueChatButton = document.createElement("button");
+  ContinueChatButton.classList.add("confirm_continue_call_button");
+  ContinueChatButton.setAttribute('id',"continueChat");
+  ContinueChatButton.innerHTML = "Continue with chat";
+  buttonContainer.appendChild(ContinueChatButton);
+
+  dialogContent.appendChild(imgCont);
+  dialogContent.appendChild(buttonContainer);
+
+  ConfirmHangUpButton.addEventListener("click", () => {
+    handleHangUp();
+  });
+
+  ContinueChatButton.addEventListener("click" , () => {
+    continueChatHandler();
+  })
+
+  return confirmdialog;
 }
 
 

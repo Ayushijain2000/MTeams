@@ -91,7 +91,7 @@
                 <h4 class="notes_title">Notes</h4>
                 <form action="/index" class="notes_form">
                     <labe for="notesArea"></labe>
-                    <textarea name="notes" id="notes" cols="30" rows="18" class="notes_textarea"></textarea>
+                    <textarea name="notes" id="notes" cols="30" rows="20" class="notes_textarea"></textarea>
 
                     <!-- for downloading the notes -->
                     <div class="downtext">
@@ -108,7 +108,7 @@
             </div>
 
             <!-- main call conatiner where the video will appear -->
-            <div class='call_container'>
+            <div class='call_container' id="call_cont">
                 <div class='videos_container'>
                     <div id='video_placeholder' class='videos_placeholder'>
                         <div class="placeholder_space">
@@ -192,6 +192,7 @@
                 </div>
             </div>
 
+            <div id="ConfirmHangUp"></div>
             <div id="emojiDialog"></div>
             <div id="dialog"></div>
 

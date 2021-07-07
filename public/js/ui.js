@@ -1,5 +1,6 @@
 import * as constants from "./constants.js";
 import * as elements from "./elements.js";
+import * as webRTCHandler from "./webRTCHandler.js";
 
 export const updatePersonalCode = (personalCode) => {
   const personalCodeParagraph = document.getElementById(
@@ -76,7 +77,7 @@ export const showInfoDialog = (preOfferAnswer) => {
   if (preOfferAnswer === constants.preOfferAnswer.CALL_UNAVAILABLE) {
     infoDialog = elements.getInfoDialog(
       "Connection is not possible",
-      "Probably ypu peer is busy. Please try againg later"
+      "Probably your peer is busy. Please try againg later"
     );
   }
 
@@ -112,6 +113,11 @@ export const removeAllEmojis = () =>{
   emojiArea.querySelectorAll("*").forEach((emojiArea) => emojiArea.remove());
 }
 
+export const removeAllConfirmHangUpDialog = () =>{
+  const Confirmdialog = document.getElementById("ConfirmHangUp");
+  Confirmdialog.querySelectorAll("*").forEach((Confirmdialog) => Confirmdialog.remove());
+};
+
 export const showCallElements = (callType) => {
   if (callType === constants.callType.CHAT_PERSONAL_CODE) {
     showChatCallElements();
@@ -130,6 +136,7 @@ const showChatCallElements = () => {
 
   const newMessageInput = document.getElementById("new_message");
   showElement(newMessageInput);
+  
   //block panel
   disableDashboard();
 };
@@ -221,6 +228,12 @@ export const switchRecordingButtons = (switchForResumeButton = false) => {
   }
 };
 
+export const showFinalHangUp = (handleHangUp , continueChatHandler) => {
+  const Confirmdialog = document.getElementById("ConfirmHangUp");
+  const incomingConfirmHangUp = elements.getConfirmHangUp(handleHangUp , continueChatHandler);
+  Confirmdialog.appendChild(incomingConfirmHangUp);
+};
+
 //ui after ending call
 export const updateUIAgain = (callType) =>{
   enableDashboard();
@@ -241,13 +254,32 @@ export const updateUIAgain = (callType) =>{
   hideElement(document.getElementById('remote_video'));
   showElement(document.getElementById('video_placeholder'));
 
+  showElement(document.getElementById("mic_button"));
+  showElement(document.getElementById("camera_button"));
+
   const time = document.getElementById("clock");
   hideElement(time);
 
   //remove dialogs if any
     removeAllDialogs();
+    removeAllConfirmHangUpDialog();
 };
 
+export const updateUIForContinueChat = ()=>{
+
+  hideElement(document.getElementById("start_recording_button"));
+  hideElement(document.getElementById("screen_sharing_button"));
+  hideElement(document.getElementById("mic_button"));
+  hideElement(document.getElementById("camera_button"));
+
+  updateMicButton(false);
+  updateCameraButton(false);
+
+  hideElement(document.getElementById('remote_video'));
+
+  removeAllDialogs();
+  removeAllConfirmHangUpDialog();
+};
 // ui helper functions
 
 const enableDashboard = () => {

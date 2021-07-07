@@ -46,6 +46,10 @@ export const registerSocketEvents = (socket) => {
     }
   });
 
+  socket.on("user-hanged-to-continue-chat" , () => {
+    webRTCHandler.handleUserHangedToContinueChat();
+ });
+
   socket.on('emoji-offer' , (data) =>{
      webRTCHandler.handleEmojiOffer(data);
   });
@@ -71,6 +75,10 @@ export const sendDataUsingWebRTCSignaling = (data) => {
 
 export const sendUserHangedUp = (data) =>{
   socketIO.emit('user-hanged-up' , data);
+};
+
+export const sendUserHangedToContinueChat = (data) =>{
+  socketIO.emit('user-hanged-to-continue-chat' , data);
 };
 
 export const sendEmojiOffer = (data) =>{
