@@ -8,17 +8,7 @@ let peerConection;
 let dataChannel;
 
 const defaultConstraints = {
-  audio:{
-    echoCancellation: { exact: true },
-    googEchoCancellation: true,
-    googExperimentalEchoCancellation: true,  
-    googAutoGainControl: true, 
-    googExperimentalAutoGainControl: true, 
-    googNoiseSuppression: true, 
-    googHighpassFilter: true, 
-    googAudioMirroring: false, 
-    googExperimentalNoiseSuppression: true, 
-  },
+  audio: true,
   video: true,
 };
 
