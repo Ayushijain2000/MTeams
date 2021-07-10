@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build_test" : "rm -rf dist/ && npm run lint && npm run build_cjs && jasmine",
+    "build_test_debug": "rm -rf dist/ && npm run lint && npm run build_cjs && jasmine --debug-brk"
+  
   },
   "author": "Ayushi",
   "license": "ISC",
