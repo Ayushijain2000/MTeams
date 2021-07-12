@@ -185,9 +185,6 @@ body{
   padding-left: 6rem;
 }
 
-/* .notes_cont , .rec_cont , .call_cont{
-    padding-left: 0px;
-} */
 .notes_cont , .call_cont{
    padding-right: 6rem;
 }
@@ -231,7 +228,6 @@ body{
     margin-top: 4.5rem;
     margin-left: 12px;
     height: 40px;
-    /* width: 9rem; */
 }
 
 .right_main_cont{
@@ -273,8 +269,32 @@ body{
     font-size: 16px;
 }
 
+.section3{
+    text-align: center;
+    height: 43rem;
+    background-color: rgb(221, 245, 250);
+}
+
+.heading_video{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    padding: .4rem;
+    padding-bottom: 2rem;
+}
+
+.iframe_container{
+    position: relative;
+}
+
+.video_frame{
+    border: 10px solid rgb(5, 5, 105);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 17px;
+}
+
 .footer{
     background-color: rgb(27, 3, 83);
     color: white;
     text-align: center;
+    margin-top: 1rem;
 }
