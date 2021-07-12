@@ -45,14 +45,14 @@ export const getFeatures = () => {
             featureId: 7,
             name: "Reactions",
             img: "./utils/homeImg/send_emoji_bg.jpeg",
-            fpara: "Want to note down any piece of information in just one click !!? MTeams offers you an asset feature IN-MEETING NOTES which allows you to note down what you want in just one click. Also you can download the notes so that you can access it whenever you want anytime and anywhere in your device",
+            fpara: "Reaction and emojis are the non-verbal cues with rich emotional meanings. Emoji are an important medium for interaction and emotional communication on the Internet. Emoji can express or enhance emotions therefore keeping this in time Mteams has provided the feature of reactions" ,
          },
          
          {
             featureId: 8,
             name: "Meeting Clock",
             img: "./utils/homeImg/clock_bg.jpeg",
-            fpara: "Want to note down any piece of information in just one click !!? MTeams offers you an asset feature IN-MEETING NOTES which allows you to note down what you want in just one click. Also you can download the notes so that you can access it whenever you want anytime and anywhere in your device",
+            fpara: "The clock is one of the most important devices in civilization. Everything we know is dependent on time, whether it be your work routine or relax routine. So keeping in mind how important is time for you, Mteams provides a feature of in meeting clock to keep a check on time.",
          }
     ];
 
