@@ -4,6 +4,13 @@ MTeams is video and chatting web application. A virtuous way to connect at ease 
 
 ![Mteams](https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_1.46.03_AM_bE00vymP9.png)
 
+<br>
+
+[Visit Mteams](https://secure-sea-49977.herokuapp.com/)
+<br>
+
+[Watch Video Tutorial](https://youtu.be/vHdq0kBKLJY)
+
 ## FEATURES IN MTEAMS
 
 **Mteams has got for you a bunch of handy features :-**
@@ -161,29 +168,29 @@ understand and test.
    <br>
    <p float="left">
     
-   <img style="border-radius: 100%"  src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.52.59_PM_JJyhns4CN.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/node_ktQcnKqVwT.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.54.17_PM_10YrEmchrX.png" width="60" height="60">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/socketIO_T2sdQyznI.png" width="60" height="60">   
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.11_PM_YTca0ascU.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/webRTC_Rq_XT4cWvK.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.03_PM_crX2bHogF.png" width="70" height="60"> 
+   <img src="https://ik.imagekit.io/48vhb7pknty/vscode_Z-zDINTtZ.png" width="70" height="60"> 
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.51_PM_jyUGddHg1.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/js_md0tcY1H8.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.08_PM_Eq4f6pWTr.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/express_zQW1SyB8D.png" width="60" height="60">  
    
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.34_PM_TUwVkiu53.png" width="60" height="60"> 
+   <img src="https://ik.imagekit.io/48vhb7pknty/git_J9FDXTySH.png" width="60" height="60"> 
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.40_PM_cES19Fszj.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/ejs_pz6VKZxC2.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.59.40_PM_1JjC0oEuO.png" width="60" height="60">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/chai__zHBHXR_kcC.png" width="60" height="60">   
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.15_PM_IRAZW31eT.png" width="60" height="60">
+   <img src="https://ik.imagekit.io/48vhb7pknty/passport_t91H6v4nL.png" width="60" height="60">
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.47_PM_wh4wiE2ZW.png" width="60" height="60">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/mongo_GOU-9AvOM.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.01.33_PM_Nzgs34qMZ.png" width="60" height="60">     
+   <img src="https://ik.imagekit.io/48vhb7pknty/mocha_rWRWwUSij.png" width="60" height="60">     
    <p>
 
    <br>
