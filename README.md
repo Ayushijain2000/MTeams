@@ -56,7 +56,7 @@ I divided my work in various sprints:
  
    <br>
   
-  <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.22_PM_de_vUFEH2V.png" width="500" height="400">  
+  <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.22_PM_de_vUFEH2V.png" width="600" height="400">  
    
    <br>
    <br>
@@ -67,9 +67,9 @@ I divided my work in various sprints:
    <br>
     
    <p float="left">
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.44_PM_-VvzNADpM.png" width="310" height="200">   
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.57_PM_bVvhJYMAx5.png" width="310" height="200">    
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.07_PM_9yqCGxV3t.png" width="310" height="200">      
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.44_PM_-VvzNADpM.png" width="300" height="200">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.39.57_PM_bVvhJYMAx5.png" width="300" height="200">    
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.07_PM_9yqCGxV3t.png" width="300" height="200">      
    <p>
     
    <br>
@@ -81,9 +81,9 @@ I divided my work in various sprints:
    <br>
     
    <p float="left">
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.18_PM_SGenelHG_t.png" width="310" height="200">   
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.28_PM_ktV6IHdkH.png" width="310" height="200">    
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.39_PM_waLMn8Ds-.png" width="310" height="200">      
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.18_PM_SGenelHG_t.png" width="300" height="200">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.28_PM_ktV6IHdkH.png" width="300" height="200">    
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.39_PM_waLMn8Ds-.png" width="300" height="200">      
    <p>
 
      
@@ -96,9 +96,9 @@ I divided my work in various sprints:
    <br>
    
    <p float="left">
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.50_PM_2VI_Uzi2v.png" width="310" height="200">   
-   <img src="https://ik.imagekit.io/48vhb7pknty/perf_2_xNxoVbJgen.png" width="310" height="200">    
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.58_PM_7-pUi7ku99.png" width="310" height="200">      
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.50_PM_2VI_Uzi2v.png" width="300" height="200">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/perf_2_xNxoVbJgen.png" width="300" height="200">    
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.40.58_PM_7-pUi7ku99.png" width="300" height="200">      
    <p>
     
      
