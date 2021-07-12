@@ -161,29 +161,29 @@ understand and test.
    <br>
    <p float="left">
     
-   <img style="border-radius: 100%"  src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.52.59_PM_JJyhns4CN.png" width="70" height="70">  
+   <img style="border-radius: 100%"  src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.52.59_PM_JJyhns4CN.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.54.17_PM_10YrEmchrX.png" width="70" height="70">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.54.17_PM_10YrEmchrX.png" width="60" height="60">   
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.11_PM_YTca0ascU.png" width="70" height="70">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.11_PM_YTca0ascU.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.03_PM_crX2bHogF.png" width="70" height="70"> 
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.03_PM_crX2bHogF.png" width="70" height="60"> 
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.51_PM_jyUGddHg1.png" width="70" height="70">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.56.51_PM_jyUGddHg1.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.08_PM_Eq4f6pWTr.png" width="70" height="70">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.08_PM_Eq4f6pWTr.png" width="60" height="60">  
    
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.34_PM_TUwVkiu53.png" width="70" height="70"> 
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.55.34_PM_TUwVkiu53.png" width="60" height="60"> 
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.40_PM_cES19Fszj.png" width="70" height="70">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.58.40_PM_cES19Fszj.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.59.40_PM_1JjC0oEuO.png" width="70" height="70">   
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_4.59.40_PM_1JjC0oEuO.png" width="60" height="60">   
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.15_PM_IRAZW31eT.png" width="70" height="70">
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.15_PM_IRAZW31eT.png" width="60" height="60">
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.47_PM_wh4wiE2ZW.png" width="70" height="70">  
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.00.47_PM_wh4wiE2ZW.png" width="60" height="60">  
     
-   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.01.33_PM_Nzgs34qMZ.png" width="70" height="70">     
+   <img src="https://ik.imagekit.io/48vhb7pknty/Screenshot_2021-07-12_at_5.01.33_PM_Nzgs34qMZ.png" width="60" height="60">     
    <p>
 
    <br>
@@ -223,9 +223,10 @@ For development, you will only need Node.js, a node global package and npm insta
 You can find more information about the Node.js installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
 
 1. Download the code from here
-
-   ![Nodejs]()
-
+    <br>
+    ![download](https://ik.imagekit.io/48vhb7pknty/download_mlAHlzcWu)
+    <br>
+    
 2. Open the project in your preferable `editor` and open the `terminal`. There you can see the `package.json` file.
 
 3. cd into the project.
