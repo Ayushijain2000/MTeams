@@ -63,7 +63,10 @@ I divided my work in various sprints:
 ![Agile Board]()
 
 **2.CI/CD And TDD :** Continuous Integration and delivery along with Test driven Development helped me in continuous integration and bring down defects in code.
-![CI/CD 1](https://drive.google.com/file/d/1TRCPr-qVdbuIgg3pUw2jJGeK6kNVrKc4/view?usp=sharing) ![CI/CD 2](https://drive.google.com/file/d/1RHhB7Di693_N-l3BzdiNqK4G_SE83fCG/view?usp=sharing) 
+
+![CI/CD 1](https://github.com/Ayushijain2000/MTeams/blob/public/utils/readmeImg/CD1.jpeg?raw=true)  
+
+![CI/CD 2](https://github.com/Ayushijain2000/MTeams/blob/public/utils/readmeImg/CD2.jpeg?raw=true) 
 
 **3.Code In Extensible Modules :** Writing code  as extensible module made it easier to design  
 understand and test.
@@ -114,10 +117,10 @@ You can find more information about the Node.js installation on the [official No
 4. write the following in the `terminal`:
    
    ``` Javascript
-      
-      - npm install
-      - npm install -g nodemon
-      - nodemon app.js 
+
+    npm install
+    npm install -g nodemon
+    nodemon app.js 
 
    ```
   you can also use node app.js instead of nodemon app.js , but it is preferred to use nodemon app.js _(nodemon is a utility that will monitor for any changes in your source and automatically restart your server)_
